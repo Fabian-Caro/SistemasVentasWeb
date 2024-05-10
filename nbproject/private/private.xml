@@ -6,8 +6,11 @@
             <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/web/index.jsp</file>
             <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/Controlador/Controlador.java</file>
             <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/web/principal.jsp</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/Modelo/EmpleadoDTO.java</file>
             <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/config/Conexion.java</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/Modelo/EmpleadoDAO.java</file>
             <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/Controlador/Validar.java</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

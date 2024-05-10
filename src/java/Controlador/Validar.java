@@ -1,9 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package Controlador;
 
+import Modelo.EmpleadoDAO;
+import Modelo.EmpleadoDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -11,11 +9,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author carof
- */
 public class Validar extends HttpServlet {
+
+    EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+
+    EmpleadoDTO empleadoDTO = new EmpleadoDTO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,7 +32,7 @@ public class Validar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Validar</title>");            
+            out.println("<title>Servlet Validar</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Validar at " + request.getContextPath() + "</h1>");
@@ -69,7 +67,33 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        String accion = request.getParameter("accion");
+
+        if (accion.equalsIgnoreCase("Ingresar")) {
+
+            String user = request.getParameter("txtuser");
+
+            String pass = request.getParameter("txtpass");
+
+            empleadoDTO = empleadoDAO.validar(user, pass);
+
+            if (empleadoDTO.getUser() != null) {
+                
+                request.setAttribute("usuario", empleadoDTO);
+
+                request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
+
+            } else {
+
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+
+            }
+        } else {
+            
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+            
+        }
     }
 
     /**

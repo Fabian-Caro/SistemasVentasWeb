@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class EmpleadoDTO {
 
-    private String idEmpleado;
+    private int idEmpleado;
     private String dni;
     private String nombre;
     private String telefono;
@@ -14,7 +14,7 @@ public class EmpleadoDTO {
     public EmpleadoDTO() {
     }
 
-    public EmpleadoDTO(String idEmpleado, String dni, String nombre, String telefono, String estado, String user) {
+    public EmpleadoDTO(int idEmpleado, String dni, String nombre, String telefono, String estado, String user) {
         this.idEmpleado = idEmpleado;
         this.dni = dni;
         this.nombre = nombre;
@@ -23,11 +23,11 @@ public class EmpleadoDTO {
         this.user = user;
     }
 
-    public String getIdEmpleado() {
+    public int getIdEmpleado() {
         return idEmpleado;
     }
 
-    public void setIdEmpleado(String idEmpleado) {
+    public void setIdEmpleado(int idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
 

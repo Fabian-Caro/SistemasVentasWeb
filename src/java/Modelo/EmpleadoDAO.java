@@ -61,7 +61,7 @@ public class EmpleadoDAO {
     //op CRUD
     public List listar() {
 
-        String sql = "SELECT * FROM empleado";
+        String sql = "select * from empleado";
         List<EmpleadoDTO> lista = new ArrayList<>();
         try {
             con = conexion.Conexion();
@@ -86,7 +86,7 @@ public class EmpleadoDAO {
 
     public int agregar(EmpleadoDTO em) {
 
-        String sql = "INSERT INTO empleado(Dni, Nombres, Telefono, Estado, User) VALUES(?,?,?,?,?)";
+        String sql = "insert into empleado(Dni, Nombres, Telefono, Estado, User)values(?,?,?,?,?)";
         try {
             con = conexion.Conexion();
             pst = con.prepareStatement(sql);
@@ -104,12 +104,12 @@ public class EmpleadoDAO {
 
     public EmpleadoDTO listarId(int id) {
         EmpleadoDTO emp = new EmpleadoDTO();
-        String sql = "SELECT * FROM empleado WHERE IdEmpleado=" + id;
+        String sql = "select * from empleado where IdEmpleado=" + id;
 
         try {
             con = conexion.Conexion();
             pst = con.prepareStatement(sql);
-            rs = pst.executeQuery();
+            rs=pst.executeQuery();
 
             while (rs.next()) {
                 emp.setDni(rs.getString(2));
@@ -126,7 +126,7 @@ public class EmpleadoDAO {
 
     public int actualizar(EmpleadoDTO em) {
 
-        String sql = "UPDATE empleado SET Dni=?, Nombres=?, Telefono=?, Estado=?, User=? WHERE IdEmpleado=?";
+        String sql = "update empleado set Dni=?, Nombres=?, Telefono=?, Estado=?, User=? where IdEmpleado=?";
         try {
             con = conexion.Conexion();
             pst = con.prepareStatement(sql);
@@ -144,7 +144,7 @@ public class EmpleadoDAO {
     }
 
     public void delete(int id) {
-        String sql = "DELETE FROM empleado WHERE IdEmpleado=" + id;
+        String sql = "delete from empleado where IdEmpleado=" + id;
         try {
             con = conexion.Conexion();
             pst = con.prepareStatement(sql);

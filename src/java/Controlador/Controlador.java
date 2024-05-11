@@ -107,6 +107,42 @@ public class Controlador extends HttpServlet {
 
             request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
         }
+
+//        switch (accion) {
+//            
+//            case "Principal":
+//                
+//                request.getRequestDispatcher("Principal.jsp").forward(request, response);
+//                
+//                break;
+//                
+//            case "Producto":
+//                
+//                request.getRequestDispatcher("Producto.jsp").forward(request, response);
+//                
+//                break;
+//                
+//            case "Empleado":
+//                
+//                request.getRequestDispatcher("Empleado.jsp").forward(request, response);
+//                
+//                break;
+//                
+//            case "Cliente":
+//                
+//                request.getRequestDispatcher("Clientes.jsp").forward(request, response);
+//                
+//                break;
+//                
+//            case "NuevaVenta":
+//                
+//                request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
+//
+//                break;
+//                
+//            default:
+//                throw new AssertionError();
+//        }
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

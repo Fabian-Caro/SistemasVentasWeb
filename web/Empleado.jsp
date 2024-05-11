@@ -17,10 +17,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-<<<<<<< HEAD
-        <h1>Hello munfo!</h1>
-=======
+        <div></div>
         <h1>Empleado</h1>
->>>>>>> 1d542128a5772b150c4570640621836cd5c138eb
+
     </body>
 </html>

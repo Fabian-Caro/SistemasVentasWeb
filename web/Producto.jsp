@@ -12,7 +12,7 @@
     <body>
         <h1>Producto</h1>
         <div class="d-flex">
-            <div class="card col-sm-4" >
+            <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Producto" method="POST">
                         <div class="form-group">
@@ -42,9 +42,9 @@
                     <thead>
                         <tr>
                             <th>ID</th>    
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th>Stock</th>
+                            <th>NOMBRES</th>
+                            <th>PRECIO</th>
+                            <th>STOCK</th>
                             <th>ESTADO</th>
                             <th>ACCIONES</th>
                         </tr>

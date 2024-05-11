@@ -7,6 +7,7 @@ import Modelo.EmpleadoDTO;
 import Modelo.ProductoDAO;
 import Modelo.ProductoDTO;
 import Modelo.Venta;
+import Modelo.VentaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -46,6 +47,11 @@ public class Controlador extends HttpServlet {
     int idCliente;
     double totalPagar;
     
+    
+    
+    
+    String numeroserie;
+    VentaDAO vdao=new VentaDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -113,7 +119,7 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
 
         }
-
+        /*Controlador producto*/
         if (menu.equals("Producto")) {
 
             switch (accion) {
@@ -371,6 +377,32 @@ public class Controlador extends HttpServlet {
             
             request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
         }
+        
+        
+//        Video 6
+//        
+//        default:
+//        numeroserie=vdao.GenerarSerie();
+//        if (numeroserie==null) {
+//              numeroserie="00000001";
+//              request.setAttribute("nserie",numeroserie);
+//} else {
+//int incrementar=Integer.parceInt(numeroserie);
+//GenerarSerie gs= new GenerarSerie();
+//numeroserie=gs.NumeroSerie(incrementar);
+//request.setAttribute("nserie",numeroserie);
+//}
+//request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
+//        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
     }
 

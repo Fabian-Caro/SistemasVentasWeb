@@ -5,6 +5,12 @@
         <group>
             <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/Controlador/Controlador.java</file>
             <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/web/RegistrarVentas.jsp</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/web/Principal.jsp</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/web/Empleado.jsp</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/Modelo/ProductoDAO.java</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/web/Producto.jsp</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/Controlador/Validar.java</file>
+            <file>file:/C:/Users/carof/OneDrive/Documentos/NetBeansProjects/SistemasVentasWeb/src/java/Modelo/ProductoDTO.java</file>
         </group>
     </open-files>
 </project-private>

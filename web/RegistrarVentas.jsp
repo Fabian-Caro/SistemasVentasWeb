@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Ventas
-    Created on : 10/05/2024, 5:19:54 p. m.
-    Author     : carof
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

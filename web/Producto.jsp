@@ -12,29 +12,27 @@
     <body>
         <h1>Producto</h1>
         <div class="d-flex">
-            <div class="card col-sm-4" >
+            <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Producto" method="POST">
                         <div class="form-group">
                             <label>Dni</label>
-                            <input type="text" value="${empleado.getDni()}" name="txtDni" class="form-control" required>
+                            <input type="text" value="${empleado.getNombreProducto()}" name="txtNombreProducto" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input type="text" value="${empleado.getNombre()}" name="txtNombres" class="form-control" required>
+                            <input type="text" value="${empleado.getPrecioProducto()}" name="txtPrecioProducto" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" value="${empleado.getTelefono()}" name="txtTel" class="form-control" required>
+                            <input type="text" value="${empleado.getStockProducto()}" name="txtStockProducto" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" value="${empleado.getEstado()}" name="txtEstado" class="form-control" required>
+                            <input type="text" value="${empleado.getEstadoProducto()}" name="txtEstadoProducto" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Usuario</label>
-                            <input type="text" value="${empleado.getUser()}" name="txtUser" class="form-control" required>
-                        </div>
+
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
@@ -46,23 +44,21 @@
                     <thead>
                         <tr>
                             <th>ID</th>    
-                            <th>DNI</th>
                             <th>NOMBRES</th>
-                            <th>TELEFONO</th>
+                            <th>PRECIO</th>
+                            <th>STOCK</th>
                             <th>ESTADO</th>
-                            <th>USUARIO</th>
                             <th>ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="em" items="${empleados}">
+                        <c:forEach var="producto" items="${productos}">
                             <tr>
-                                <td>${em.getIdEmpleado()}</td>
-                                <td>${em.getDni()}</td>
-                                <td>${em.getNombre()}</td>
-                                <td>${em.getTelefono()}</td>
-                                <td>${em.getEstado()}</td>
-                                <td>${em.getUser()}</td>
+                                <td>${producto.getIdProducto()}</td>
+                                <td>${producto.getNombreProducto()}</td>
+                                <td>${producto.getPrecioProducto()}</td>
+                                <td>${producto.getStockProducto()}</td>
+                                <td>${producto.getEstadoProducto()}</td>
                                 <td>
                                     <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&idEmpleado=${em.getIdEmpleado()}">Editar</a>
                                     <a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Eliminar&idEmpleado=${em.getIdEmpleado()}">Delete</a>
@@ -70,7 +66,6 @@
                             </tr>
                         </c:forEach>
                     </tbody>
-
                 </table>
             </div>
         </div>

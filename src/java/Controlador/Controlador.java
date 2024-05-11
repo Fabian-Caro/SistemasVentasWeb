@@ -96,7 +96,7 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
 
         }
-
+        /*Controlador producto*/
         if (menu.equals("Producto")) {
 
             switch (accion) {
@@ -105,7 +105,7 @@ public class Controlador extends HttpServlet {
                     
                     List lista = productoDAO.listar();
                     
-                    request.setAttribute("producto", lista);
+                    request.setAttribute("productos", lista);
                     
                     break;
                     

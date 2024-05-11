@@ -1,14 +1,3 @@
-<%-- 
-    Document   : Empleado
-<<<<<<< HEAD
-    Created on : 10/05/2024, 5:01:41 p. m.
-    Author     : usuario
-=======
-    Created on : 10/05/2024, 5:19:39 p. m.
-    Author     : carof
->>>>>>> 1d542128a5772b150c4570640621836cd5c138eb
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

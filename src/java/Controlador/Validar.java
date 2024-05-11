@@ -82,7 +82,7 @@ public class Validar extends HttpServlet {
                 
                 request.setAttribute("usuario", empleadoDTO);
 
-                request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
+                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
 
             } else {
 

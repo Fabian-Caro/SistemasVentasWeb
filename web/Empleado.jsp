@@ -17,7 +17,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div></div>
+        <div>
+            <div>
+                <label>nombre</label>
+            </div>
+        </div>
         <h1>Empleado</h1>
 
     </body>

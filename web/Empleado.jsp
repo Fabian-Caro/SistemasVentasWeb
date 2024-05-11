@@ -6,6 +6,13 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div>
+            <div>
+                <label>nombre</label>
+                <imput ></imput>
+            </div>
+        </div>
         <h1>Empleado</h1>
+
     </body>
 </html>

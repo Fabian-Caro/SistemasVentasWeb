@@ -32,6 +32,7 @@ public class Controlador extends HttpServlet {
     EmpleadoDTO em = new EmpleadoDTO();
     EmpleadoDAO edao = new EmpleadoDAO();
     int ide;
+    
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

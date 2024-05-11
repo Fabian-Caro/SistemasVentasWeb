@@ -1,9 +1,3 @@
-<%-- 
-    Document   : principal
-    Created on : 6/05/2024, 7:52:47 p. m.
-    Author     : carof
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <title>JSP Page</title>
+        <title>Principal</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
@@ -22,16 +16,16 @@
                             <a style="margin-left: 10px; border: none" class="btn btn-outline-light" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto" target="MyFrame">Producto</a>
+                            <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto&accion=Listar" target="MyFrame">Producto</a>
                         </li>
                         <li class="nav-item">
                             <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Empleado&accion=Listar" target="MyFrame" >Empleado</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Cliente" target="MyFrame" >Clientes</a>
+                            <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Cliente&accion=Listar" target="MyFrame" >Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta" target="MyFrame" >Nueva venta</a>
+                            <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta&accion=default" target="MyFrame" >Nueva venta</a>
                         </li>
                     </ul>
                     <div class="dropdown">

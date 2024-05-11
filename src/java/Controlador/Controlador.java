@@ -2,6 +2,8 @@ package Controlador;
 
 import Modelo.EmpleadoDAO;
 import Modelo.EmpleadoDTO;
+import Modelo.ProductoDAO;
+import Modelo.ProductoDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -23,6 +25,8 @@ public class Controlador extends HttpServlet {
      */
     EmpleadoDTO em = new EmpleadoDTO();
     EmpleadoDAO edao = new EmpleadoDAO();
+    ProductoDTO producto = new ProductoDTO();
+    ProductoDAO productoDAO = new ProductoDAO();
     int ide;
     
 
@@ -95,6 +99,91 @@ public class Controlador extends HttpServlet {
 
         if (menu.equals("Producto")) {
 
+            switch (accion) {
+                
+                case "Listar":
+                    
+                    List lista = productoDAO.listar();
+                    
+                    request.setAttribute("producto", lista);
+                    
+                    break;
+                    
+                case "Agregar":
+                    
+                    String nombreProducto = request.getParameter("txtNombreProducto");
+                    
+                    String precioProducto = request.getParameter("txtPrecioProducto");
+                    
+                    String stockProducto = request.getParameter("txtStockProducto");
+                    
+                    String estadoProducto = request.getParameter("txtEstadoProducto");
+                    
+                    producto.setNombreProducto(nombreProducto);
+                    
+                    producto.setPrecioProducto(precioProducto);
+                    
+                    producto.setStockProducto(stockProducto);
+                    
+                    producto.setEstadoProducto(estadoProducto);
+                    
+                    productoDAO.agregar(producto);
+                    
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    
+                    break;
+                    
+                case "Editar":
+                    
+                    ide = Integer.parseInt(request.getParameter("idProducto"));
+                    
+                    ProductoDTO productoEditar = productoDAO.listarId(ide);
+                    
+                    request.setAttribute("producto", productoEditar);
+                    
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    
+                    break;
+                   
+                case "Actualizar":
+                    
+                    String nombreProductoActualizar = request.getParameter("txtNombreProducto");
+                    
+                    String precioProductoActualizar = request.getParameter("txtPrecioProducto");
+                    
+                    String stockProductoActualizar = request.getParameter("txtStockProducto");
+                    
+                    String estadoProductoActualizar = request.getParameter("txtEstadoProducto");
+                    
+                    producto.setNombreProducto(nombreProductoActualizar);
+                    
+                    producto.setPrecioProducto(precioProductoActualizar);
+                    
+                    producto.setStockProducto(stockProductoActualizar);
+                    
+                    producto.setEstadoProducto(estadoProductoActualizar);
+                    
+                    producto.setIdProducto(ide);
+                    
+                    productoDAO.actualizar(producto);
+                    
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    
+                    break;
+                    
+                case "Eliminar":
+                    
+                    ide = Integer.parseInt("idProducto");
+                    
+                    productoDAO.eliminar(ide);
+                    
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    
+                    break;
+                    
+                default:
+                    throw new AssertionError();
+            }
             request.getRequestDispatcher("Producto.jsp").forward(request, response);
         }
 

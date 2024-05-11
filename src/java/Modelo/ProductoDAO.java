@@ -46,13 +46,14 @@ public class ProductoDAO {
                 producto.setStockProducto(resultSet.getString("Stock"));
 
                 producto.setEstadoProducto(resultSet.getString("Estado"));
+                
             }
         } catch (Exception e) {
         }
 
         return producto;
     }
-
+    
     public List listar() {
 
         String sql = "SELECT * FROM producto";
@@ -132,6 +133,8 @@ public class ProductoDAO {
             
             while (resultSet.next()) {
                 
+                producto.setIdProducto(resultSet.getInt(1));
+                
                 producto.setNombreProducto(resultSet.getString(2));
                 
                 producto.setPrecioProducto(resultSet.getString(3));
@@ -177,7 +180,7 @@ public class ProductoDAO {
     
     public void eliminar (int id) {
         
-        String sentenciaSQL = "DELETE FROM empleado WHERE idEmpleado=" + id;
+        String sentenciaSQL = "DELETE FROM producto WHERE idProducto=" + id;
         
         try {
             

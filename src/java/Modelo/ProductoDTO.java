@@ -8,16 +8,16 @@ public class ProductoDTO {
 
     private String nombreProducto;
 
-    private String precioProducto;
+    private Double precioProducto;
 
-    private String stockProducto;
+    private int stockProducto;
 
     private String estadoProducto;
 
     public ProductoDTO() {
     }
 
-    public ProductoDTO(int idProducto, String nombreProducto, String precioProducto, String stockProducto, String estadoProducto) {
+    public ProductoDTO(int idProducto, String nombreProducto, Double precioProducto, int stockProducto, String estadoProducto) {
         this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         this.precioProducto = precioProducto;
@@ -41,19 +41,19 @@ public class ProductoDTO {
         this.nombreProducto = nombreProducto;
     }
 
-    public String getPrecioProducto() {
+    public Double getPrecioProducto() {
         return precioProducto;
     }
 
-    public void setPrecioProducto(String precioProducto) {
+    public void setPrecioProducto(Double precioProducto) {
         this.precioProducto = precioProducto;
     }
 
-    public String getStockProducto() {
+    public int getStockProducto() {
         return stockProducto;
     }
 
-    public void setStockProducto(String stockProducto) {
+    public void setStockProducto(int stockProducto) {
         this.stockProducto = stockProducto;
     }
 

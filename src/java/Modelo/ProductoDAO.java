@@ -20,39 +20,59 @@ public class ProductoDAO {
     int respuesta;
     
     
-    public ProductoDTO buscar(int id){
-        ProductoDTO p=new ProductoDTO();
-        String sql = "SELECT * FROM producto WHERE idProducto="+id;
+    public ProductoDTO buscar(int idProducto){
+        
+        ProductoDTO producto=new ProductoDTO();
+        
+        String sentenciaSQL = "SELECT * FROM producto WHERE idProducto="+idProducto;
+        
         try {
+            
             connection = conexion.Conexion();
-            preparedStatement = connection.prepareStatement(sql);
+            
+            preparedStatement = connection.prepareStatement(sentenciaSQL);
+            
             resultSet = preparedStatement.executeQuery();
             
             while (resultSet.next()) {
-                p.setIdProducto(resultSet.getInt(1));
-                p.setNombreProducto(resultSet.getString(2));
-                p.setPrecioProducto(resultSet.getString(3));
-                p.setStockProducto(resultSet.getString(4));
-                p.setEstadoProducto(resultSet.getString(5));       
+                
+                producto.setIdProducto(resultSet.getInt(1));
+                
+                producto.setNombreProducto(resultSet.getString(2));
+                
+                producto.setPrecioProducto(resultSet.getDouble(3));
+                
+                producto.setStockProducto(resultSet.getInt(4));
+                
+                producto.setEstadoProducto(resultSet.getString(5));       
+                
             }
             
         } catch (Exception e) {
         }
-        return p;
+        
+        return producto;
     }
     
-    public int actualizarstook(int id, int stock){
-        String sql = "update producto set Stock=? where IdProducto=?";
+    public int actualizarStock(int idProducto, int stockActualProducto){
+        
+        String sentenciaSQL = "UPDATE producto SET Stock=? WHERE IdProducto=?";
         
         try {
+            
             connection = conexion.Conexion();
-            preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, stock);
-            preparedStatement.setInt(1, id);
-            preparedStatement.executeQuery();
+            
+            preparedStatement = connection.prepareStatement(sentenciaSQL);
+            
+            preparedStatement.setInt(1, stockActualProducto);
+            
+            preparedStatement.setInt(2, idProducto);
+            
+            preparedStatement.executeUpdate();
             
         } catch (Exception e) {
         }
+        
         return respuesta;
     }
 
@@ -78,9 +98,9 @@ public class ProductoDAO {
 
                 producto.setNombreProducto(resultSet.getString("Nombres"));
 
-                producto.setPrecioProducto(resultSet.getString("Precio"));
+                producto.setPrecioProducto(resultSet.getDouble("Precio"));
 
-                producto.setStockProducto(resultSet.getString("Stock"));
+                producto.setStockProducto(resultSet.getInt("Stock"));
 
                 producto.setEstadoProducto(resultSet.getString("Estado"));
                 
@@ -113,9 +133,9 @@ public class ProductoDAO {
 
                 producto.setNombreProducto(resultSet.getString(2));
 
-                producto.setPrecioProducto(resultSet.getString(3));
+                producto.setPrecioProducto(resultSet.getDouble(3));
 
-                producto.setStockProducto(resultSet.getString(4));
+                producto.setStockProducto(resultSet.getInt(4));
 
                 producto.setEstadoProducto(resultSet.getString(5));
 
@@ -141,9 +161,9 @@ public class ProductoDAO {
             
             preparedStatement.setString(1, producto.getNombreProducto());
             
-            preparedStatement.setString(2, producto.getPrecioProducto());
+            preparedStatement.setDouble(2, producto.getPrecioProducto());
             
-            preparedStatement.setString(3, producto.getStockProducto());
+            preparedStatement.setInt(3, producto.getStockProducto());
             
             preparedStatement.setString(4, producto.getEstadoProducto());
             
@@ -174,9 +194,9 @@ public class ProductoDAO {
                 
                 producto.setNombreProducto(resultSet.getString(2));
                 
-                producto.setPrecioProducto(resultSet.getString(3));
+                producto.setPrecioProducto(resultSet.getDouble(3));
                 
-                producto.setStockProducto(resultSet.getString(4));
+                producto.setStockProducto(resultSet.getInt(4));
                 
                 producto.setEstadoProducto(resultSet.getString(5));
                 
@@ -199,9 +219,9 @@ public class ProductoDAO {
             
             preparedStatement.setString(1, producto.getNombreProducto());
             
-            preparedStatement.setString(2, producto.getPrecioProducto());
+            preparedStatement.setDouble(2, producto.getPrecioProducto());
             
-            preparedStatement.setString(3, producto.getStockProducto());
+            preparedStatement.setInt(3, producto.getStockProducto());
             
             preparedStatement.setString(4, producto.getEstadoProducto());
             

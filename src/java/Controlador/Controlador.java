@@ -142,9 +142,9 @@ public class Controlador extends HttpServlet {
 
                     producto.setNombreProducto(nombreProducto);
 
-                    producto.setPrecioProducto(precioProducto);
+                    producto.setPrecioProducto(Double.parseDouble(precioProducto));
 
-                    producto.setStockProducto(stockProducto);
+                    producto.setStockProducto(Integer.parseInt(stockProducto));
 
                     producto.setEstadoProducto(estadoProducto);
 
@@ -178,9 +178,9 @@ public class Controlador extends HttpServlet {
 
                     producto.setNombreProducto(nombreProductoActualizar);
 
-                    producto.setPrecioProducto(precioProductoActualizar);
+                    producto.setPrecioProducto(Double.parseDouble(precioProductoActualizar));
 
-                    producto.setStockProducto(stockProductoActualizar);
+                    producto.setStockProducto(Integer.parseInt(stockProductoActualizar));
 
                     producto.setEstadoProducto(estadoProductoActualizar);
 
@@ -369,16 +369,24 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("lista", lista);
 
                     break;
-                case "GenerarVenta":
-                    //actializar
-                    for(int i=0; i<lista.size(); i++){
-                        ProductoDTO pr=new ProductoDTO();
-                        int cantidad=lista.get(i).getCantidad();
-                        int idproducto=lista.get(i).getIdProducto();
-                        ProductoDAO aO=new ProductoDAO();
-                        pr=aO.buscar(idproducto);
-                        int sac = Integer.parseInt(pr.getStockProducto())- cantidad;
-                        aO.actualizarstook(idproducto, sac);
+                case "GenerarVenta":                    
+                    /*Actualizar el stock después de venta*/
+                    for (int i=0; i<lista.size(); i++){
+                        
+                        ProductoDTO producto = new ProductoDTO();
+                        
+                        int cantidadProducto = lista.get(i).getCantidad();
+                        
+                        int idProducto = lista.get(i).getIdProducto();
+                        
+                        ProductoDAO actualizarStockDAO = new ProductoDAO();
+                        
+                        producto = actualizarStockDAO.buscar(idProducto);
+                        
+                        int stockActualizado = producto.getStockProducto()- cantidadProducto;
+                        
+                        actualizarStockDAO.actualizarStock(idProducto, stockActualizado);
+                        
                     }
                     
                     

@@ -18,11 +18,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex" style="margin-right: 10px;">
-                                    <input type="text" name="txtDniCliente" value="${clienteBuscar.getDniCliente()}" class="form-control" placeholder="Código Cliente">
+                                    <input type="text" name="txtDniCliente" value="${clienteBuscar.getDniCliente()}" class="form-control" placeholder="Código Cliente" >
                                     <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-info" style="margin-left: 10px;">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="txtNombreCliente" value="${clienteBuscar.getNombresCliente()}" class="form-control" placeholder="Datos cliente">
+                                    <input type="text" name="txtNombreCliente" value="${clienteBuscar.getNombresCliente()}" class="form-control" placeholder="Datos cliente" >
                                 </div>  
                             </div>
                             <div class="form-group">
@@ -30,11 +30,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex" style="margin-right: 10px;">
-                                    <input type="text" name="txtCodigoProducto" value="${productoBuscar.getIdProducto()}" class=" form-control" placeholder="Código Producto">
+                                    <input type="text" name="txtCodigoProducto" value="${productoBuscar.getIdProducto()}" class=" form-control" placeholder="Código Producto" >
                                     <input type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info" style="margin-left: 10px;">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="txtNombreProducto" value="${productoBuscar.getNombreProducto()}" class="form-control" placeholder="Producto">
+                                    <input type="text" name="txtNombreProducto" value="${productoBuscar.getNombreProducto()}" class="form-control" placeholder="Producto" >
                                 </div> 
                             </div>
                             <br>
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div>
-                                <button type="submit" name="accion" value="Agregar">Agregar Producto</button>
+                                <button type="submit" name="accion" value="Agregar" class="btn btn-outline-info" style="margin-top:10px;">Agregar Producto</button>
                             </div>
                         </form>
                     </div>
@@ -59,9 +59,9 @@
             <div class="col-sm-6" style="margin-left: 10px;">
                 <div class="card">
                     <div class="card-body">
-                        <div class="d-flex col-sm-6 ml-auto">
+                        <div class="d-flex col-sm-5 ml-auto">
                             <label>Nro. Serie</label>
-                            <input type="text" name="txtNumeroSerie" class="form-control">
+                            <input readonly="" type="text" name="txtNumeroSerie" value="${nserie}" class="form-control">
                         </div>
                         <br>
                         <table class="table table-hover">
@@ -96,11 +96,11 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="col-sm-6">
-                            <input type="submit" name="accion" value="Generar Venta" class="btn btn-success">
+                            <a href="Controlador?menu=NuevaVenta%accion=GenerarVenta" class="btn btn-success">Generar Venta</a> 
                             <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                         </div>
                         <div class="col-sm-4 ml-auto">
-                            <input type="text" name="txtTotal" value="${totalPagar}" class="form-control">
+                            <input type="text" name="txtTotal" value="$/. ${totalPagar}0" class="form-control">
                         </div>
                     </div>
                 </div>

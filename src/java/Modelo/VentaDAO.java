@@ -59,7 +59,7 @@ public class VentaDAO {
     }
     
     public int guardarVenta(Venta ve){
-        String sql="insert into ventas(IdCliente, IdEmpleado, NumerioSerie, FechaVentas, Monto, Estado)values(?,?,?,?,?,?)";
+        String sql="insert into ventas(IdCliente, IdEmpleado, NumeroSerie, FechaVentas, Monto, Estado)values(?,?,?,?,?,?)";
         
         try {
             con = cn.Conexion();

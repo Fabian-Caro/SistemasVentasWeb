@@ -18,6 +18,43 @@ public class ProductoDAO {
     ResultSet resultSet;
 
     int respuesta;
+    
+    
+    public ProductoDTO buscar(int id){
+        ProductoDTO p=new ProductoDTO();
+        String sql = "SELECT * FROM producto WHERE idProducto="+id;
+        try {
+            connection = conexion.Conexion();
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            
+            while (resultSet.next()) {
+                p.setIdProducto(resultSet.getInt(1));
+                p.setNombreProducto(resultSet.getString(2));
+                p.setPrecioProducto(resultSet.getString(3));
+                p.setStockProducto(resultSet.getString(4));
+                p.setEstadoProducto(resultSet.getString(5));       
+            }
+            
+        } catch (Exception e) {
+        }
+        return p;
+    }
+    
+    public int actualizarstook(int id, int stock){
+        String sql = "update producto set Stock=? where IdProducto=?";
+        
+        try {
+            connection = conexion.Conexion();
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, stock);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeQuery();
+            
+        } catch (Exception e) {
+        }
+        return respuesta;
+    }
 
     public ProductoDTO validar(String idProducto) {
 

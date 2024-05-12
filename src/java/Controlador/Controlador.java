@@ -327,6 +327,7 @@ public class Controlador extends HttpServlet {
                     break;
 
                 case "Agregar":
+                    request.setAttribute("nserie", numeroserie);
                     request.setAttribute("clienteBuscar", cliente);
                     totalPagar = 0.0;
 
@@ -369,14 +370,29 @@ public class Controlador extends HttpServlet {
 
                     break;
                 case "GenerarVenta":
+                    //actializar
+                    for(int i=0; i<lista.size(); i++){
+                        ProductoDTO pr=new ProductoDTO();
+                        int cantidad=lista.get(i).getCantidad();
+                        int idproducto=lista.get(i).getIdProducto();
+                        ProductoDAO aO=new ProductoDAO();
+                        pr=aO.buscar(idproducto);
+                        int sac = Integer.parseInt(pr.getStockProducto())- cantidad;
+                        aO.actualizarstook(idproducto, sac);
+                    }
+                    
+                    
+                    //guardar
                     venta.setIdCliente(cliente.getIdCliente());
-                    venta.setIdEmpleado(1);
+                    venta.setIdEmpleado(2);
                     venta.setNumeroSerie(numeroserie);
                     venta.setFechaVenta("2024-10-20");
                     venta.setMontoVenta(totalPagar);
                     venta.setEstadoVenta("1");
                     vdao.guardarVenta(venta);
-                     int idv=Integer.parseInt(vdao.IDVentas());
+                    
+                    int idv = Integer.parseInt(vdao.IDVentas()); //error guardar en detalle_venta
+                    
                     for (int i=0; i< lista.size();i++) {
                         
                         venta=new Venta();
@@ -386,11 +402,8 @@ public class Controlador extends HttpServlet {
                         venta.setPrecioProducto(lista.get(i).getPrecioProducto());
                         vdao.guardarDetalleventas(venta);
                     }
+                    
                 default:
-                    venta=new Venta();
-                    lista=new ArrayList<>();
-                    item=0;
-                    totalPagar=0.0;
                     numeroserie = vdao.GenerarSerie();
                     if (numeroserie == null) {
                         numeroserie = "00000001";

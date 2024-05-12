@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
 import java.sql.Connection;
@@ -12,10 +8,6 @@ import java.sql.ResultSet;
 
 import config.Conexion;
 
-/**
- *
- * @author usuario
- */
 public class VentaDAO {
 
     Connection con;
@@ -42,7 +34,7 @@ public class VentaDAO {
 
     public String IDVentas() {
         String idventas = "";
-        String sql = "select * max(IdVentas) from ventas";
+        String sql = "select max(IdVentas) from ventas";
 
         try {
             con = cn.Conexion();

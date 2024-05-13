@@ -62,6 +62,10 @@ public class Controlador extends HttpServlet {
 
             request.getRequestDispatcher("Principal.jsp").forward(request, response);
         }
+        
+        if(menu.equals("Inicio")) {
+            request.getRequestDispatcher("Inicio.jsp").forward(request, response);
+        }
 
         if (menu.equals("Empleado")) {
 
@@ -205,7 +209,9 @@ public class Controlador extends HttpServlet {
                 default:
                     throw new AssertionError();
             }
+
             request.getRequestDispatcher("Producto.jsp").forward(request, response);
+
         }
 
         if (menu.equals("Cliente")) {
@@ -228,7 +234,7 @@ public class Controlador extends HttpServlet {
 
                     String direccionCliente = request.getParameter("txtDireccionCliente");
 
-                    String estadoProducto = request.getParameter("txtEstadoCiente");
+                    String estadoProducto = request.getParameter("txtEstadoCliente");
 
                     cliente.setDniCliente(dniCliente);
 
@@ -295,7 +301,9 @@ public class Controlador extends HttpServlet {
                 default:
                     throw new AssertionError();
             }
+
             request.getRequestDispatcher("Clientes.jsp").forward(request, response);
+
         }
 
         if (menu.equals("NuevaVenta")) {
@@ -406,21 +414,21 @@ public class Controlador extends HttpServlet {
                     break;
 
                 case "Eliminar":
-                    
+
                     int idProductoEliminar = Integer.parseInt(request.getParameter("idProducto"));
 
                     for (Venta v : lista) {
-                        
+
                         if (v.getIdProducto() == idProductoEliminar) {
-                            
+
                             lista.remove(v);
-                            
+
                             break;
                         }
                     }
 
                     request.setAttribute("lista", lista);
-                    
+
                     request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
 
                     break;

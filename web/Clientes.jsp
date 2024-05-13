@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input type="text" value="${cliente.getNombreCliente()}" name="txtNombresCliente" class="form-control" required>
+                            <input type="text" value="${cliente.getNombresCliente()}" name="txtNombresCliente" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Direccion</label>
@@ -46,7 +46,6 @@
                             <th>NOMBRES</th>
                             <th>Dirección</th>
                             <th>Estado</th>
-                            <th>USUARIO</th>
                             <th>ACCIONES</th>
                         </tr>
                     </thead>

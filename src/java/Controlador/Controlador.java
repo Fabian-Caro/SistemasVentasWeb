@@ -10,7 +10,6 @@ import Modelo.Venta;
 import Modelo.VentaDAO;
 import config.GenerarSerie;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -121,7 +120,7 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
 
         }
-        /*Controlador producto*/
+
         if (menu.equals("Producto")) {
 
             switch (accion) {
@@ -408,7 +407,11 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("totalPagar", totalPagar);
 
                     request.setAttribute("lista", lista);
-
+                    
+                    request.setAttribute("nserie", numeroserie);
+                    
+                    request.setAttribute("clienteBuscar", cliente);
+                    
                     request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
 
                     break;
@@ -434,6 +437,7 @@ public class Controlador extends HttpServlet {
                     break;
 
                 case "GenerarVenta":
+                    
                     /*Actualizar el stock después de venta*/
                     for (int i = 0; i < lista.size(); i++) {
 
@@ -498,6 +502,8 @@ public class Controlador extends HttpServlet {
                     lista.clear();
 
                     totalPagar = 0.0;
+                    
+                    item = 0;
 
                     request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
 

@@ -5,10 +5,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Empleados</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">      
+        <style>
+            body, .table, .card, .card-body, .form-control, .form-control:focus {
+                background-color: #1e1e1e;
+                color: #fff;
+            }
+
+            .table-hover tbody tr:hover {
+                color: #fff;
+            }
+
+            footer {
+                background-color: #1e1e1e;
+                color: #fff;
+            }
+        </style>
     </head>
-    
     <body>
         <h1>Empleado</h1>
         <div class="d-flex">
@@ -40,7 +54,6 @@
                     </form>
                 </div>
             </div>
-
             <div class="col-sm-8">
                 <table class="table table-hover">
                     <thead>

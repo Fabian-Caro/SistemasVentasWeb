@@ -7,19 +7,19 @@
         <title>Inicio de sesión</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">       
         <style>
-            
+
             body {
                 display: flex;
                 flex-direction: column;
                 min-height: 100vh;
-                background-color: #1e1e1e;   
+                background-color: #1e1e1e;
             }
-            
+
             footer {
-                background-color: #1e1e1e;   
+                background-color: #1e1e1e;
                 color: #fff;
             }
-            
+
             .content {
                 flex: 1 0 auto;
             }
@@ -61,8 +61,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
         <footer>
             <p>
-                &copy; 2024 Fabian Caro y Cristian Barrera. Todos los derechos reservados.
-            </p>     
+                <a href="https://github.com/KeiKeix/SistemasVentasWeb" target ="_blank">
+                    <img src="IMAGENES/Githublogo.png" alt="Logo de github" style="height: 50px;"/>
+                </a>
+            </p>
+            &copy; 2024 Fabian Caro y Cristian Barrera. Todos los derechos reservados.
+
         </footer>
     </body>
 </html>

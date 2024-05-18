@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +53,8 @@ public class EmpleadoDAO {
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public EmpleadoDTO validar(String user, String dni)" + e.getMessage());
         }
 
         return em;
@@ -79,7 +81,8 @@ public class EmpleadoDAO {
                 lista.add(em);
 
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public List listar()" + e.getMessage());
         }
         return lista;
     }
@@ -97,7 +100,8 @@ public class EmpleadoDAO {
             pst.setString(5, em.getUser());
             pst.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public int agregar(EmpleadoDTO em)" + e.getMessage());
         }
         return respuesta;
     }
@@ -109,7 +113,7 @@ public class EmpleadoDAO {
         try {
             con = conexion.Conexion();
             pst = con.prepareStatement(sql);
-            rs=pst.executeQuery();
+            rs = pst.executeQuery();
 
             while (rs.next()) {
                 emp.setDni(rs.getString(2));
@@ -119,7 +123,8 @@ public class EmpleadoDAO {
                 emp.setUser(rs.getString(6));
 
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public EmpleadoDTO listarId(int id)" + e.getMessage());
         }
         return emp;
     }
@@ -138,7 +143,8 @@ public class EmpleadoDAO {
             pst.setInt(6, em.getIdEmpleado());
             pst.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public int actualizar(EmpleadoDTO em)" + e.getMessage());
         }
         return respuesta;
     }
@@ -149,7 +155,8 @@ public class EmpleadoDAO {
             con = conexion.Conexion();
             pst = con.prepareStatement(sql);
             pst.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public void delete(int id)" + e.getMessage());
         }
     }
 }

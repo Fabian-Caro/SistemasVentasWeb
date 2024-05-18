@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import config.Conexion;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +50,8 @@ public class ClienteDAO {
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public ClienteDTO validar(String idCliente)" + e.getMessage());
         }
 
         return cliente;
@@ -84,7 +86,8 @@ public class ClienteDAO {
                 
             }
             
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public ClienteDTO buscar(String dni)" + e.getMessage());
         }
         
         return cliente;
@@ -122,7 +125,8 @@ public class ClienteDAO {
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public List listar()" + e.getMessage());
         }
 
         return lista;
@@ -148,7 +152,8 @@ public class ClienteDAO {
 
             preparedStatement.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public int agregar(ClienteDTO cliente)" + e.getMessage());
         }
         return respuesta;
     }
@@ -178,7 +183,8 @@ public class ClienteDAO {
                 cliente.setEstadoCliente(resultSet.getString(5));
 
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public ClienteDTO listarId(int id)" + e.getMessage());
         }
 
         return cliente;
@@ -206,7 +212,8 @@ public class ClienteDAO {
 
             preparedStatement.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public int actualizar(ClienteDTO cliente)" + e.getMessage());
         }
 
         return respuesta;
@@ -224,7 +231,8 @@ public class ClienteDAO {
 
             preparedStatement.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error en: public void eliminar(int id)" + e.getMessage());
         }
 
     }

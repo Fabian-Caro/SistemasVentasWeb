@@ -66,7 +66,7 @@
                             <ul class="dropdown-menu text-center">
                                 <li>
                                     <a class="dropdown-item" href="#">
-                                        <img src="IMAGENES/Logo_ServicioWeb-removebg-preview 500.png" alt="" style="width: 50px; height: 50px"/>
+                                        <img src="IMAGENES/Logo_ServicioWeb-removebg.png" alt="Imagen de perfil" style="width: 50px; height: 50px"/>
                                     </a>
                                 </li>
                                 <li><a class="dropdown-item" href="#">${usuario.getUser()}</a></li>

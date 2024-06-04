@@ -1,4 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<% HttpSession obj = request.getSession();
+if(obj != null && obj.getAttribute("usuario")!=null){
+
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -92,3 +98,7 @@
         </footer>
     </body>
 </html>
+<% }else{
+                request.getRequestDispatcher("error.html").forward(request, response);
+
+} %>

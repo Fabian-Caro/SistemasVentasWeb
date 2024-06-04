@@ -86,7 +86,9 @@ public class Validar extends HttpServlet {
 
             } else {
 
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                //request.getRequestDispatcher("index.jsp").forward(request, response);
+                System.out.println("Usuario o pss invalido");
+                request.getRequestDispatcher("error.html").forward(request, response);
 
             }
         } else {

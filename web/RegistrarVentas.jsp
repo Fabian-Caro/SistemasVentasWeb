@@ -1,5 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% HttpSession obj = request.getSession();
+if(obj != null && obj.getAttribute("usuario")!=null){
+
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -151,3 +156,7 @@
         <div></div>
     </body>
 </html>
+<% }else{
+                request.getRequestDispatcher("error.html").forward(request, response);
+
+} %>

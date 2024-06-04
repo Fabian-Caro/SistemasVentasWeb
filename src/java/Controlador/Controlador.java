@@ -115,7 +115,8 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;
                 default:
-                    throw new AssertionError();
+                    //throw new AssertionError();
+                    request.getRequestDispatcher("error.html").forward(request, response);
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
 
@@ -206,7 +207,8 @@ public class Controlador extends HttpServlet {
                     break;
 
                 default:
-                    throw new AssertionError();
+                    //throw new AssertionError();
+                    request.getRequestDispatcher("error.html").forward(request, response);
             }
 
             request.getRequestDispatcher("Producto.jsp").forward(request, response);
@@ -298,7 +300,8 @@ public class Controlador extends HttpServlet {
                     break;
 
                 default:
-                    throw new AssertionError();
+                    //throw new AssertionError();
+                    request.getRequestDispatcher("error.html").forward(request, response);
             }
 
             request.getRequestDispatcher("Clientes.jsp").forward(request, response);

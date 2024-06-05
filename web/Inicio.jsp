@@ -1,9 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<% HttpSession obj = request.getSession();
-if(obj != null && obj.getAttribute("usuario")!=null){
-
+<%  
+    HttpSession obj = request.getSession();
+    if (obj != null && obj.getAttribute("usuario") != null) {
 %>
 
 <!DOCTYPE html>
@@ -44,27 +43,27 @@ if(obj != null && obj.getAttribute("usuario")!=null){
         </div>
         <div class="logo" id="logo">
             <img src="IMAGENES/Logo_ServicioWeb-removebg.png" alt="" style="height: 500px; width: 500px; "/>
-            
+
         </div>
         <script>
-            
+
             setTimeout(function () {
-                
+
                 var logo = document.getElementById("logo");
 
-                
+
                 welcomeMessage.style.opacity = 1;
-                
+
                 logo.style.opacity = 1;
 
-                
                 logo.style.transform = "translate(-50%, -50%) translateY(0)";
-                
+
             }, 5000);
         </script>
     </body>
 </html>
-<% }else{
-                request.getRequestDispatcher("error.html").forward(request, response);
-
-} %>
+<%  
+    } else {
+        request.getRequestDispatcher("error.html").forward(request, response);
+    }
+%>

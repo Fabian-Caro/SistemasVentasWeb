@@ -44,15 +44,12 @@ public class EmpleadoDAO {
             while (rs.next()) {
 
                 em.setIdEmpleado(rs.getInt("IdEmpleado"));
-
-                em.setUser(rs.getString("User"));
-
                 em.setDni(rs.getString("Dni"));
-
                 em.setNombre(rs.getString("Nombres"));
-
+                em.setTelefono(rs.getString("Telefono"));
+                em.setEstado(rs.getString("Estado"));
+                em.setUser(rs.getString("User"));
             }
-
         } catch (SQLException e) {
             System.out.println("Error en: public EmpleadoDTO validar(String user, String dni)" + e.getMessage());
         }
@@ -121,7 +118,6 @@ public class EmpleadoDAO {
                 emp.setTelefono(rs.getString(4));
                 emp.setEstado(rs.getString(5));
                 emp.setUser(rs.getString(6));
-
             }
         } catch (SQLException e) {
             System.out.println("Error en: public EmpleadoDTO listarId(int id)" + e.getMessage());

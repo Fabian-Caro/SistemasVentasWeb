@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class Validar extends HttpServlet {
 
@@ -80,21 +81,25 @@ public class Validar extends HttpServlet {
 
             if (empleadoDTO.getUser() != null) {
                 
-                request.setAttribute("usuario", empleadoDTO);
+                HttpSession mySesion = request.getSession(true);
+                
+                System.out.println("id de sesión: " + mySesion.getId());
+                System.out.println("fecha de sesión: " + mySesion.getCreationTime());
+
+                mySesion.setAttribute("usuario", empleadoDTO);
+                
+                System.out.println("Ingreso correcto ");
 
                 request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
 
             } else {
-
-                //request.getRequestDispatcher("index.jsp").forward(request, response);
                 System.out.println("Usuario o pss invalido");
+                //request.getRequestDispatcher("index.jsp").forward(request, response);
+                
                 request.getRequestDispatcher("error.html").forward(request, response);
-
             }
-        } else {
-            
+        } else {            
             request.getRequestDispatcher("index.jsp").forward(request, response);
-            
         }
     }
 
